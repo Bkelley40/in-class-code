@@ -5,7 +5,7 @@ public class Car {
 	
 	public Car ()
 	{
-		this.color = "grey";
+		this("grey");
 	}
 	
 	public Car (String color)
@@ -17,5 +17,10 @@ public class Car {
 	public String getColor ()
 	{
 		return this.color;
+	}
+	
+	public static int getNumberOfCars ()
+	{
+		return Car.numberOfCars;
 	}
 }
