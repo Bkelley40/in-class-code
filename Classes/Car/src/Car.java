@@ -5,6 +5,7 @@ public class Car {
 	private static int numberOfCars = 0;
 	private int speed = 0;
 	private Transmission transmission;
+	private int gear;
 	
 	public Car ()
 	{
@@ -21,6 +22,7 @@ public class Car {
 		this.color = color;
 		this.transmission = t;
 		++Car.numberOfCars;
+		this.gear = 1;
 	}
 	
 	public String getColor ()
@@ -35,11 +37,21 @@ public class Car {
 	
 	public void accelerate (int speedChange)
 	{
+		++this.gear;
 		this.speed += speedChange;
 	}
 	
 	public int getSpeed ()
 	{
 		return this.speed;
+	}
+	
+	public String getGear ()
+	{
+		if (this.transmission == Transmission.AUTOMATIC)
+		{
+			return "drive";
+		}
+		return ""+this.gear;
 	}
 }
