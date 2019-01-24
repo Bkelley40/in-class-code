@@ -18,6 +18,9 @@ public class CarTest {
 		Car car2 = new Car();
 		assertEquals("grey", car2.getColor());
 		
-		assertEquals(2, Car.getNumberOfCars());
+		Car car3 = new Car("silver", Transmission.AUTOMATIC);
+		assertEquals("silver", car3.getColor());
+		
+		assertEquals(3, Car.getNumberOfCars());
 	}
 }

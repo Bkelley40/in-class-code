@@ -4,6 +4,7 @@ public class Car {
 	private String color;
 	private static int numberOfCars = 0;
 	private int speed = 0;
+	private Transmission transmission;
 	
 	public Car ()
 	{
@@ -12,7 +13,13 @@ public class Car {
 	
 	public Car (String color)
 	{
+		this(color, Transmission.MANUAL);
+	}
+	
+	public Car (String color, Transmission t)
+	{
 		this.color = color;
+		this.transmission = t;
 		++Car.numberOfCars;
 	}
 	
