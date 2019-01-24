@@ -1,7 +1,9 @@
+import static org.junit.Assert.assertEquals;
 
 public class Car {
 	private String color;
 	private static int numberOfCars = 0;
+	private int speed = 0;
 	
 	public Car ()
 	{
@@ -22,5 +24,15 @@ public class Car {
 	public static int getNumberOfCars ()
 	{
 		return Car.numberOfCars;
+	}
+	
+	public void accelerate (int speedChange)
+	{
+		this.speed += speedChange;
+	}
+	
+	public int getSpeed ()
+	{
+		return this.speed;
 	}
 }
