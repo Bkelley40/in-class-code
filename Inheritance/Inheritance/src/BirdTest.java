@@ -10,7 +10,7 @@ public class BirdTest {
 		birds[0] = new Bird();
 		
 		assertEquals("black", birds[0].getColor());
-//		assertEquals("garden pest", f1.getName());
+		assertEquals("crow", birds[0].getName());
 //
 //
 //		Frog f2 = new Frog("red");
