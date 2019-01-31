@@ -2,6 +2,12 @@ public class Animal { // super
 	private String color;
 	private String name;
 
+	public Animal (String name, String color)
+	{
+		this.setColor(color);
+		this.setName(name);
+	}
+	
 	public void setColor (String color)
 	{
 		this.color = color;
@@ -20,5 +26,10 @@ public class Animal { // super
 	public String getName ()
 	{
 		return this.name;
+	}
+	
+	public void move ()
+	{
+		System.out.println("Moving...");
 	}
 }

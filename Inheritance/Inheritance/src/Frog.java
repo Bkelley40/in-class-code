@@ -2,6 +2,8 @@ import static org.junit.Assert.assertEquals;
 
 public class Frog extends Animal {
 
+	private int wartCount;
+	
 	public Frog ()
 	{
 		this("green");
@@ -14,7 +16,12 @@ public class Frog extends Animal {
 	
 	public Frog (String name, String color)
 	{
-		this.setColor(color);
-		this.setName(name);
+		super(name, color);
+		this.wartCount = 5;
+	}
+	
+	public void move ()
+	{
+		System.out.println("Jumping...");
 	}
 }

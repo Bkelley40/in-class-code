@@ -18,7 +18,8 @@ public class FrogTest {
 		Frog kermit = new Frog("Kermit", "grey");
 		assertEquals("grey", kermit.getColor());
 		assertEquals("Kermit", kermit.getName());
-		
+	
+		kermit.move();
 	}
 
 }
