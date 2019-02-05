@@ -28,8 +28,8 @@ public class Animal { // super
 		return this.name;
 	}
 	
-	public void move ()
+	public String move ()
 	{
-		System.out.println("Moving...");
+		return "Moving...";
 	}
 }

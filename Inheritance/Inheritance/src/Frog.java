@@ -20,8 +20,13 @@ public class Frog extends Animal {
 		this.wartCount = 5;
 	}
 	
-	public void move ()
+	public int getWartCount ()
 	{
-		System.out.println("Jumping...");
+		return this.wartCount;
+	}
+	@Override
+	public String move ()
+	{
+		return "Jumping...";
 	}
 }

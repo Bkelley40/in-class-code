@@ -13,7 +13,6 @@ public class Bird extends Animal
 	
 	public Bird (String name, String color)
 	{
-		this.color = color;
-		this.name = name;
+		super(name, color);
 	}
 }

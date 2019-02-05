@@ -6,20 +6,21 @@ public class FrogTest {
 
 	@Test
 	public void test() {
-		Frog f1 = new Frog();
-		assertEquals("green", f1.getColor());
-		assertEquals("garden pest", f1.getName());
+		Frog frogs[] = new Frog[3];
+		frogs[0]= new Frog();
+		assertEquals("green", frogs[0].getColor());
+		assertEquals("garden pest", frogs[0].getName());
 
 
-		Frog f2 = new Frog("red");
-		assertEquals("red", f2.getColor());
-		assertEquals("garden pest", f2.getName());
+		frogs[1] = new Frog("red");
+		assertEquals("red", frogs[1].getColor());
+		assertEquals("garden pest", frogs[1].getName());
 		
-		Frog kermit = new Frog("Kermit", "grey");
-		assertEquals("grey", kermit.getColor());
-		assertEquals("Kermit", kermit.getName());
+		frogs[2] = new Frog("Kermit", "grey");
+		assertEquals("grey", frogs[2].getColor());
+		assertEquals("Kermit", frogs[2].getName());
 	
-		kermit.move();
+		frogs[2].move();
 	}
 
 }
