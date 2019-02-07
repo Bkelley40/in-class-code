@@ -15,4 +15,10 @@ public class Bird extends Animal
 	{
 		super(name, color);
 	}
+	
+	@Override
+	public String move ()
+	{
+		return "Flapping...";
+	}
 }

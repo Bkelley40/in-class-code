@@ -1,4 +1,4 @@
-public class Animal { // super
+abstract public class Animal { // super
 	private String color;
 	private String name;
 
@@ -28,8 +28,5 @@ public class Animal { // super
 		return this.name;
 	}
 	
-	public String move ()
-	{
-		return "Moving...";
-	}
+	abstract public String move ();
 }
