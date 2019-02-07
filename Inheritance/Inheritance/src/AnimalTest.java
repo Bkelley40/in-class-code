@@ -21,13 +21,14 @@ public class AnimalTest {
 		zoo[1] = new Bird();
 		assertEquals("black", zoo[1].getColor());
 		assertEquals("crow", zoo[1].getName());
-		assertEquals("Moving...", zoo[1].move());
+		assertEquals("Flapping...", zoo[1].move());
 		
 //		zoo[2] = null;
 //		for ()
 //		{
 //			if (zoo[i] == null)
 //		}
+		
 	}
 
 }
