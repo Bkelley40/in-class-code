@@ -8,20 +8,26 @@ public class Main {
 		int value;
 		do
 		{
-		try
-		{
-			value = getInt(keyboard);
-		}
-		catch (NegativeNumberException foo)
-		{
-			System.out.println("Not a positive integer.");
-			System.out.println(foo.getMessage());
-		}
-		catch (Exception e)
-		{
-			System.out.println("Invalid value");
-			break;
-		}
+			try
+			{
+				value = getInt(keyboard);
+			}
+			catch (NegativeNumberException foo)
+			{
+				System.out.println("Not a positive integer.");
+				System.out.println(foo.getMessage());
+			}
+			catch (Exception e)
+			{
+				System.out.println("Invalid value");
+				break;
+			}
+			finally
+			{
+				System.out.println("-------------");
+			}
+			System.out.println("foo");
+			
 		} while (true);
 	}
 
@@ -35,7 +41,7 @@ public class Main {
 		return input;
 	}
 	
-	private static void checkIsPositive (int input) throws NegativeNumberException
+	public static void checkIsPositive (int input) throws NegativeNumberException
 	{
 		if (input < 0)
 		{
