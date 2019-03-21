@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
 public class Max {
-	public static Integer max (ArrayList<Integer> numbers)
+	public static <DataType extends Comparable<DataType>> DataType max (ArrayList<DataType> numbers)
 	{
-		Integer highest = numbers.get(0);
+		DataType highest = numbers.get(0);
 		for (int i = 1; i < numbers.size(); ++i)
 		{
-			if (numbers.get(i) > highest)
+			if (numbers.get(i).compareTo(highest) > 0)
 			{
 				highest = numbers.get(i);
 			}
