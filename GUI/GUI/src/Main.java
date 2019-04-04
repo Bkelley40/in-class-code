@@ -15,16 +15,20 @@ public class Main {
 		window.setTitle("Venn Diagram");
 		// what to draw
 		JTextField textField = new JTextField("Two disks");
-		window.add(textField);
+		textField.setHorizontalAlignment(JTextField.CENTER);
+		textField.setEditable(false);
+		window.add(textField, BorderLayout.NORTH);
 		
 		JButton button = new JButton("GO");
 		window.add(button, BorderLayout.SOUTH);
 		
+		window.add(new VennDiagramComponent());
 
 		// where to draw
 		
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.setSize(300, 300);
+		//window.setSize(300, 300);
+		window.pack();
 		window.setVisible(true);
 	}
 }
