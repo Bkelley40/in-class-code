@@ -1,7 +1,10 @@
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class Main {
@@ -20,6 +23,7 @@ public class Main {
 		window.add(textField, BorderLayout.NORTH);
 		
 		JButton button = new JButton("GO");
+		button.addActionListener(new Main().new ButtonListener());
 		window.add(button, BorderLayout.SOUTH);
 		
 		window.add(new VennDiagramComponent());
@@ -30,5 +34,14 @@ public class Main {
 		//window.setSize(300, 300);
 		window.pack();
 		window.setVisible(true);
+	}
+	
+	public class ButtonListener implements ActionListener
+	{
+		public void actionPerformed (ActionEvent e)
+		{
+			System.out.print("foo");
+			JOptionPane.showMessageDialog(null, "Go clicked");
+		}
 	}
 }
