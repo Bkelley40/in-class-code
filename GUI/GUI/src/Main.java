@@ -40,7 +40,6 @@ public class Main {
 	{
 		public void actionPerformed (ActionEvent e)
 		{
-			System.out.print("foo");
 			JOptionPane.showMessageDialog(null, "Go clicked");
 		}
 	}
