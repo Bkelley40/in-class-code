@@ -1,4 +1,6 @@
 import javax.swing.JComponent;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import java.awt.Color;
 
@@ -7,7 +9,8 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.Ellipse2D;
 
-public class VennDiagramComponent extends JComponent {
+public class VennDiagramComponent extends JComponent implements ChangeListener
+{
 	@Override
 	public void paintComponent (Graphics g)
 	{
@@ -27,5 +30,11 @@ public class VennDiagramComponent extends JComponent {
 	public Dimension getPreferredSize ()
 	{
 		return new Dimension(310, 220);
+	}
+	
+	@Override
+	public void stateChanged (ChangeEvent event)
+	{
+		System.out.println("foo");
 	}
 }

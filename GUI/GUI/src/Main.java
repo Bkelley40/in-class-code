@@ -5,7 +5,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
 import javax.swing.JTextField;
+import javax.swing.SpinnerNumberModel;
 
 public class Main {
 	public static void main (String[] args)
@@ -22,11 +24,12 @@ public class Main {
 		textField.setEditable(false);
 		window.add(textField, BorderLayout.NORTH);
 		
-		JButton button = new JButton("GO");
-		button.addActionListener(new Main().new ButtonListener());
-		window.add(button, BorderLayout.SOUTH);
-		
-		window.add(new VennDiagramComponent());
+		VennDiagramComponent venn = new VennDiagramComponent();
+		window.add(venn);
+
+		SpinnerNumberModel wheel = new SpinnerNumberModel();
+		window.add(new JSpinner(wheel), BorderLayout.SOUTH);
+		wheel.addChangeListener(venn);
 
 		// where to draw
 		
@@ -36,11 +39,11 @@ public class Main {
 		window.setVisible(true);
 	}
 	
-	public class ButtonListener implements ActionListener
-	{
-		public void actionPerformed (ActionEvent e)
-		{
-			JOptionPane.showMessageDialog(null, "Go clicked");
-		}
-	}
+//	public class ButtonListener implements ActionListener
+//	{
+//		public void actionPerformed (ActionEvent e)
+//		{
+//			JOptionPane.showMessageDialog(null, "Go clicked");
+//		}
+//	}
 }
