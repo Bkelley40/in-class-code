@@ -27,7 +27,7 @@ public class Main {
 		VennDiagramComponent venn = new VennDiagramComponent();
 		window.add(venn);
 
-		SpinnerNumberModel wheel = new SpinnerNumberModel();
+		SpinnerNumberModel wheel = new SpinnerNumberModel(100, 10, 210, 10);
 		window.add(new JSpinner(wheel), BorderLayout.SOUTH);
 		wheel.addChangeListener(venn);
 
