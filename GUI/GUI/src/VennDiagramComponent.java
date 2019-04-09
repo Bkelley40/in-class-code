@@ -1,4 +1,5 @@
 import javax.swing.JComponent;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -11,6 +12,8 @@ import java.awt.geom.Ellipse2D;
 
 public class VennDiagramComponent extends JComponent implements ChangeListener
 {
+	private int disk2Left = 100;
+	
 	@Override
 	public void paintComponent (Graphics g)
 	{
@@ -20,7 +23,7 @@ public class VennDiagramComponent extends JComponent implements ChangeListener
 		g2.setColor(new Color(255, 0, 0, 100));
 		g2.fill(circle);
 		
-		Ellipse2D circle2 = new Ellipse2D.Double(100.0, 10.0, 200.0, 200.0);
+		Ellipse2D circle2 = new Ellipse2D.Double((double)this.disk2Left, 10.0, 200.0, 200.0);
 		g2.setColor(new Color(0, 0, 255, 100));
 		g2.fill(circle2);
 		
@@ -35,6 +38,9 @@ public class VennDiagramComponent extends JComponent implements ChangeListener
 	@Override
 	public void stateChanged (ChangeEvent event)
 	{
-		System.out.println("foo");
+		SpinnerNumberModel wheel = (SpinnerNumberModel)event.getSource();
+		this.disk2Left = (int)wheel.getValue();
+		
+		this.repaint();
 	}
 }
