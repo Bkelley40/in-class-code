@@ -1,4 +1,5 @@
 import javax.swing.JComponent;
+import javax.swing.JSlider;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -32,15 +33,16 @@ public class VennDiagramComponent extends JComponent implements ChangeListener
 	@Override
 	public Dimension getPreferredSize ()
 	{
-		return new Dimension(310, 220);
+		return new Dimension(210 + this.disk2Left, 220);
 	}
 	
 	@Override
 	public void stateChanged (ChangeEvent event)
 	{
-		SpinnerNumberModel wheel = (SpinnerNumberModel)event.getSource();
+		JSlider wheel = (JSlider)event.getSource();
 		this.disk2Left = (int)wheel.getValue();
 		
 		this.repaint();
+		this.invalidate();
 	}
 }
