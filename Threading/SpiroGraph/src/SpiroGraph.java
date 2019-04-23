@@ -31,18 +31,33 @@ public class SpiroGraph extends JFrame implements ActionListener
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
+	public class Stoppable extends Thread
+	{
+		public void run ()
+		{
+			Graphics2D g2 = (Graphics2D)box.getGraphics();
+			g2.setColor(new Color(255, 0 ,0));
+			
+			for (int i = 0; i < 180 / 5; ++i)
+			{
+				g2.drawOval(50,  180, 300,  40);
+				g2.rotate(Math.toRadians(5), 200, 200);
+				try
+				{
+					Thread.sleep(300);
+				}
+				catch (InterruptedException e)
+				{
+				}
+			}
+		}
+	}
+	
 	@Override
 	public void actionPerformed (ActionEvent e)
 	{
-		this.fill();
+		Stoppable foo = new Stoppable();
+		foo.start();
 	}
 	
-	public void fill ()
-	{
-		Graphics2D g2 = (Graphics2D)this.getGraphics();
-		g2.setColor(new Color(255, 0 ,0));
-		
-		g2.drawOval(50,  180, 300,  40);
-	}
-
 }
